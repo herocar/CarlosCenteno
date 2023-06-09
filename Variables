@@ -1,0 +1,58 @@
+import math 
+
+
+def fisica(velocidadInicial, velocidadFinal, tiempo1, tiempo2, aceleracion1, alturaInicial):
+    cadena = "Altura maxima"
+
+    if cadena == "Calcular desplazamiento":
+        velocidad_inicial = velocidadInicial  # Velocidad inicial en m/s
+        aceleracion = aceleracion1  # Aceleración en m/s^2
+        tiempo = tiempo1  # Tiempo en segundos
+
+        velocidad_final = velocidad_inicial + (aceleracion * tiempo)
+        desplazamiento = (velocidad_inicial * tiempo) + (0.5 * aceleracion * tiempo**2)
+
+        print("Velocidad f:", velocidad_final, "m/s")
+        print("Desplazamiento:", desplazamiento, "metros")
+
+    elif cadena == "Tiempo caida":
+      altura_inicial = alturaInicial  # Altura inicial en metros
+      gravedad = aceleracion1  # Aceleración debido a la gravedad en m/s^2
+
+      velocidad_final = math.sqrt(2 * gravedad * altura_inicial)
+      tiempo_caída = math.sqrt((2 * altura_inicial) / gravedad)
+
+      print("Velocidad final:", velocidad_final, "m/s")
+      print("Tiempo de caída:", tiempo_caída, "segundos")
+
+    elif cadena == "Calcular dos tiempos":
+      velocidad_inicial = velocidadInicial  # Velocidad inicial en m/s
+      tiempo_1 = tiempo1  # Tiempo en segundos para la velocidad constante
+      aceleracion = aceleracion1  # Aceleración en m/s^2
+      tiempo_2 = tiempo2  # Tiempo en segundos para la aceleración
+
+      velocidad_final = velocidad_inicial + (aceleracion * tiempo_2)
+
+      desplazamiento_1 = velocidad_inicial * tiempo_1
+      desplazamiento_2 = (velocidad_inicial * tiempo_2) + (0.5 * aceleracion * tiempo_2**2)
+      desplazamiento_total = desplazamiento_1 + desplazamiento_2
+
+      print("Velocidad final:", velocidad_final, "m/s")
+      print("Desplazamiento total:", desplazamiento_total, "metros")
+
+    elif cadena == "Altura maxima":
+      
+      tiempo_alcanzar_altura_maxima = - velocidadInicial / aceleracion1
+      altura_maxima = (velocidadInicial ** 2) / (2 * abs(aceleracion1))
+
+      velocidad_inicial = velocidadInicial  # Velocidad inicial en m/s
+      aceleracion_gravedad = aceleracion1  # Aceleración debida a la gravedad en m/s^2
+
+      print("La altura maxima alcanzar es de :", altura_maxima, "metros")
+     
+     
+      print("El tiempo para que alquenze la altura maxima es de :", tiempo_alcanzar_altura_maxima, "segundos")
+
+
+# Ejemplo de la función
+fisica(20, 0, 0, 0, -9.8, 0)
